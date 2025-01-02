@@ -1,12 +1,13 @@
 import './header.css';
 import { FaSearch } from 'react-icons/fa'; // Font Awesome 아이콘
+import { Link } from 'react-router-dom'; // Link를 추가
 
 function Header() {
   return (
     <>
       <div className="wrapper">
         <div className="logo-wrapper">
-          <h1 className="logo">NEXUS</h1>
+          <Link to="/" className="logo"><h1>NEXUS</h1></Link> {/* 로고 클릭 시 홈으로 이동 */}
         </div>
         <div className="search-wrapper">
           <input 
@@ -20,7 +21,8 @@ function Header() {
         </div>
         <div className="account-wrapper">
           <h2 className="login">로그인</h2>
-          <h2 className="signup">회원가입</h2>
+          {/* 회원가입 버튼에 Link 추가 */}
+          <Link to="/signup" className="signup"><h2>회원가입</h2></Link>
         </div>
       </div>
     </>

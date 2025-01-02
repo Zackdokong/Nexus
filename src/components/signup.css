@@ -1,0 +1,85 @@
+/* 전체 컨테이너 */
+.signup-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1e1e1e;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* 제목 스타일 */
+  .signup-title {
+    background-color: #1e1e1e;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* 폼 스타일 */
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+    justify-content: center;
+  }
+  
+  /* 라벨과 입력 필드 */
+  .signup-form label {
+    margin-bottom: 15px;
+    margin-left: 25px;
+    font-size: 16px;
+    background-color: #1e1e1e;
+  }
+  
+  .signup-form input {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .signup-form input::placeholder {
+    color: #888;
+  }
+  
+  /* 버튼 스타일 */
+  .signup-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: solid white;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-width: 1px;
+  }
+  
+  .signup-button:hover {
+    background-color: #888;
+  }
+  
+  .error-message {
+    background-color: #1e1e1e;
+    color: red;
+    font-size: 16px;
+    margin-bottom: 30px;
+    margin-left: 25px;
+  }
+  
+  .success-message {
+    background-color: #1e1e1e;
+    color: rgb(11, 212, 11);
+    font-size: 16px;
+    margin-bottom: 30px;
+    margin-left: 25px;
+  }
+  
