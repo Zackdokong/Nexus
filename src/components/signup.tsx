@@ -21,7 +21,7 @@ function SignUp() {
     }
 
     // Supabase Auth 회원가입 호출
-    const { data, error } = await supabase.auth.signUp({
+    const { error } = await supabase.auth.signUp({
       email,
       password,
       options: {
