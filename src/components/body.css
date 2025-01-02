@@ -1,0 +1,79 @@
+.post-wrapper {
+    display: flex;
+    height: 750px;
+    margin-top: 50px;
+    justify-content: space-between;
+}
+
+.latest, .popularity {
+    border: solid white;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 40%;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: black;
+    color: white;
+    overflow-y: auto; /* 스크롤 가능 */
+    padding: 20px;
+}
+
+/* 섹션 제목과 글쓰기 버튼 */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* 글쓰기 버튼 */
+.write-button {
+    padding: 10px 20px;
+    background-color: black;
+    border: solid white;
+    border-width: 1px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+.write-button:hover{
+    background-color: #3a3939;
+}
+
+/* 게시물 목록 스타일 */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: solid white;
+    border-width: 1px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.post-list li:hover {
+    background-color: #3a3939;
+}
+
+/* hr 스타일 */
+hr {
+    border: none; /* 기본 선 제거 */
+    border-top: 1px solid white; /* 상단에만 흰색 선 추가 */
+    margin: 20px 0; /* 위아래 여백 */
+    opacity: 0.5; /* 선의 투명도 */
+    width: 100%; /* 가로 길이 */
+}

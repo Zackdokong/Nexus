@@ -19,8 +19,8 @@ function Header() {
           </button>
         </div>
         <div className="account-wrapper">
-          <h2 className="login">Log In</h2>
-          <h2 className="signup">Sign Up</h2>
+          <h2 className="login">로그인</h2>
+          <h2 className="signup">회원가입</h2>
         </div>
       </div>
     </>
