@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './body.css';
 
 function MainBody() {
@@ -8,7 +9,9 @@ function MainBody() {
         <div className="latest">
           <div className="section-header">
             <h2>최신 게시물</h2>
-            <button className="write-button">글쓰기</button>
+            <Link to="/write">
+              <button className="write-button">글쓰기</button>
+            </Link>
           </div>
           <hr />
           <ul className="post-list">
@@ -24,7 +27,9 @@ function MainBody() {
         <div className="popularity">
           <div className="section-header">
             <h2>인기 게시물</h2>
-            <button className="write-button">글쓰기</button>
+            <Link to="/write">
+              <button className="write-button">글쓰기</button>
+            </Link>
           </div>
           <hr />
           <ul className="post-list">

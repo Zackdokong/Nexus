@@ -1,0 +1,72 @@
+.write-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #1e1e1e; /* 어두운 배경 */
+    color: #f5f5f5; /* 밝은 텍스트 색상 */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .write-title {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+    background-color: #1e1e1e;
+  }
+  
+  .write-form {
+    margin-left: 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1e1e1e;
+  }
+  
+  .write-form label {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  
+  .write-form input,
+  .write-form textarea {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 4px;
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+    font-size: 14px;
+  }
+  
+  .write-form textarea {
+    margin-top: 10px;
+    height: 150px;
+    resize: none;
+  }
+  
+  textarea:focus, input:focus {
+    border:2px solid white;
+    outline: none;
+  }
+  
+  .submit-button {
+    width: 80%;
+    padding: 12px 24px;
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    margin-left: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .submit-button:hover {
+    background-color: #888;
+  }
+  

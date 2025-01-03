@@ -26,6 +26,7 @@ function SignUp() {
       password,
       options: {
         // displayName을 metadata로 추가
+        // display_name이 아니라 displayName이었네 시펄;
         data: {
           displayName: nickname,
         },

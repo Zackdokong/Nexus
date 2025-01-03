@@ -46,6 +46,11 @@
     height: 20px;
   }
   
+  .signup-form input:focus {
+    border:2px solid white;
+    outline: none;
+  }
+
   .signup-form input::placeholder {
     color: #888;
   }
