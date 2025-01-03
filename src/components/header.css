@@ -35,7 +35,7 @@
     font-size: 14px;
 }
 .search-button {
-    height: 53px; /* 검색창과 높이 맞추기 */
+    height: 52px; /* 검색창과 높이 맞추기 */
     width: 50px; /* 버튼 크기 조절 */
     border: solid white;
     border-width: 1px;
@@ -47,6 +47,7 @@
     border-radius: 0 5px 5px 0; /* 오른쪽 모서리만 둥글게 */
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 6px;
 }
 
 .search-button:hover {

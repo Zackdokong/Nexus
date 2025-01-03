@@ -4,7 +4,7 @@
     margin: 50px auto;
     padding: 20px;
     background-color: #1e1e1e;
-    border: 1px solid white;
+    border: none;
     border-radius: 10px;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -14,7 +14,7 @@
   .signup-title {
     background-color: #1e1e1e;
     text-align: center;
-    font-size: 24px;
+    font-size: 30px;
     margin-bottom: 20px;
   }
   
@@ -28,9 +28,9 @@
   
   /* 라벨과 입력 필드 */
   .signup-form label {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     margin-left: 25px;
-    font-size: 16px;
+    font-size: 20px;
     background-color: #1e1e1e;
   }
   
@@ -43,6 +43,7 @@
     background-color: #1e1e1e;
     color: white;
     font-size: 14px;
+    height: 20px;
   }
   
   .signup-form input::placeholder {
@@ -54,13 +55,14 @@
     margin-top: 20px;
     padding: 10px 20px;
     border: solid white;
-    background-color: black;
+    background-color: #1e1e1e;
     color: white;
     font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     border-width: 1px;
+    margin-bottom: 15px;
   }
   
   .signup-button:hover {
@@ -77,7 +79,7 @@
   
   .success-message {
     background-color: #1e1e1e;
-    color: rgb(11, 212, 11);
+    color: rgb(21, 236, 21);
     font-size: 16px;
     margin-bottom: 30px;
     margin-left: 25px;
