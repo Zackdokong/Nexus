@@ -2,6 +2,7 @@ import Header from "../header";
 import "./write.css";
 import { useState, useEffect } from "react";
 import supabase from "../../../supabase";
+import { useNavigate } from "react-router-dom"; // useNavigate 추가
 
 function WritePost() {
   const [title, setTitle] = useState("");
@@ -9,6 +10,7 @@ function WritePost() {
   const [writer, setWriter] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+  const navigate = useNavigate(); // useNavigate 사용
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -17,11 +19,12 @@ function WritePost() {
         setWriter(session.user.id); // 사용자 UUID 저장
       } else {
         setWriter(null);
+        navigate("/login"); // 로그인되지 않으면 로그인 페이지로 리디렉션
       }
     };
 
     fetchUser();
-  }, []);
+  }, [navigate]); // navigate 추가
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
