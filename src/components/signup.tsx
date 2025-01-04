@@ -21,20 +21,41 @@ function SignUp() {
     }
 
     // Supabase Auth 회원가입 호출
-    const { error } = await supabase.auth.signUp({
+    const { data, error: signUpError } = await supabase.auth.signUp({
       email,
       password,
       options: {
-        // displayName을 metadata로 추가
-        // display_name이 아니라 displayName이었네 시펄;
         data: {
-          displayName: nickname,
+          displayName: nickname, // displayName을 metadata로 추가
         },
       },
     });
 
-    if (error) {
-      setError(error.message);
+    if (signUpError) {
+      setError(signUpError.message);
+      return;
+    }
+
+    // user가 null이 아닌지 확인
+    const user = data?.user;
+    if (!user) {
+      setError("사용자 정보를 가져올 수 없습니다.");
+      return;
+    }
+
+    // user 테이블에 추가 정보 저장
+    const { error: insertError } = await supabase
+      .from("user")
+      .insert([
+        {
+          user_id: user.id, // Supabase Auth에서 반환된 user ID
+          email: email,
+          display_name: nickname, // 닉네임
+        },
+      ]);
+
+    if (insertError) {
+      setError(insertError.message);
     } else {
       setSuccess("회원가입이 완료되었습니다! 이메일을 확인해주세요.");
       setEmail("");
