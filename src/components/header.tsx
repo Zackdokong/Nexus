@@ -7,7 +7,7 @@ import supabase from '../../supabase';
 function Header() {
   const [user, setUser] = useState<any>(null);
   const navigate = useNavigate();
-
+  const [searchQuery, setSearchQuery] = useState("");
   useEffect(() => {
     const getUser = async () => {
       const { data: { session } } = await supabase.auth.getSession();
@@ -19,7 +19,7 @@ function Header() {
       }
     };
 
-    getUser();
+    getUser(); //절대로 건들지 말것, getUser 이거 나도 왜 되는지 모르겠음
 
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
@@ -37,7 +37,10 @@ function Header() {
     setUser(null);
     navigate('/');
   };
-
+  const handleSearch = () => {
+    if (searchQuery.trim() === "") return; // 빈 검색어 무시
+    navigate(`/search?query=${encodeURIComponent(searchQuery)}`); // 검색어와 함께 /search로 이동
+  };
   return (
     <div className="wrapper">
       <div className="logo-wrapper">
@@ -48,8 +51,9 @@ function Header() {
           type="text" 
           className="search-bar" 
           placeholder="검색어를 입력하세요..." 
+          onChange={(e) => setSearchQuery(e.target.value)} // 검색어 상태 갱신
         />
-        <button className="search-button">
+        <button className="search-button" onClick={handleSearch}>
           <FaSearch />
         </button>
       </div>
