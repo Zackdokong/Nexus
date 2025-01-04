@@ -46,9 +46,9 @@ function SearchPage() {
       // 작성자 정보를 users 테이블에서 가져오기
       const uniqueWriters = [...new Set(posts.map((post) => post.writer))]; // 고유 작성자 ID
       const { data: writers, error: writerError } = await supabase
-        .from("users") // users 테이블에서 작성자 정보 가져오기
-        .select("id, user_metadata")
-        .in("id", uniqueWriters);
+        .from("user") // user 테이블에서 작성자 정보 가져오기
+        .select("user_id, display_name") // display_name 컬럼 사용
+        .in("user_id", uniqueWriters); // user_id로 검색
 
       if (writerError) {
         console.error("Error fetching writers:", writerError.message);
@@ -56,10 +56,10 @@ function SearchPage() {
 
       // 작성자 정보를 게시물에 매핑
       const postsWithWriters = posts.map((post) => {
-        const writer = writers?.find((writer) => writer.id === post.writer);
+        const writer = writers?.find((writer) => writer.user_id === post.writer); // user_id로 일치하는 작성자 찾기
         return {
           ...post,
-          writerNickname: writer?.user_metadata?.display_name || "알 수 없음",
+          writerNickname: writer?.display_name || "알 수 없음", // display_name 가져오기
         };
       });
 
