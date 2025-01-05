@@ -35,6 +35,7 @@ function WritePost() {
     }
 
     try {
+      // 글 작성
       const { error } = await supabase
         .from("post")
         .insert([
@@ -55,6 +56,23 @@ function WritePost() {
         setSuccess("글 작성이 완료되었습니다!");
         setTitle("");
         setContent("");
+
+        // 글을 작성한 후, 작성한 글을 다시 조회하여 ID를 얻음
+        const { data: posts, error: fetchError } = await supabase
+          .from("post")
+          .select("id")
+          .eq("title", title)
+          .eq("writer", writer)
+          .order("created_at", { ascending: false })
+          .limit(1); // 최신 글 1개만 가져옴
+
+        if (fetchError) {
+          console.error("Error fetching post after insert:", fetchError.message);
+          setError("글 조회 중 오류가 발생했습니다.");
+        } else if (posts && posts.length > 0) {
+          const postId = posts[0].id; // 방금 작성한 글의 id
+          navigate(`/post/${postId}`); // 작성한 글로 리디렉션
+        }
       }
     } catch (err) {
       console.error("Unexpected error:", err);
