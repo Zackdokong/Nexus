@@ -1,73 +1,107 @@
 .post-container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid white;
-    border-radius: 8px;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 8px;
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+.post-title {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  background-color: #1e1e1e;
+}
+
+p {
     background-color: #1e1e1e;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
+}
+
+span {
+    background-color: #1e1e1e;
+}
+
+.post-meta {
+  display: flex;
+  justify-content: start;
+  font-size: 18px;
+  color: white;
+  margin-bottom: 20px;
+  background-color: #1e1e1e;
+}
+
+.post-meta span {
+    margin-right: 20px;
+}
+
+.post-detail {
+  font-size: 20px;
+  line-height: 1.5;
+  color: white;
+  margin-bottom: 20px;
+  background-color: #1e1e1e;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+}
+
+.like-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.like-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05); /* 살짝 확대 */
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 20px;
+  text-align: center;
+}
+
+.dislike-button {
+  padding-top: 20px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #dc3545; /* 빨간색 */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.dislike-button:hover {
+  background-color: #a71d2a; /* 더 어두운 빨간색 */
+  transform: scale(1.05); /* 살짝 확대 */
+}
+
+.like-dislike-bar {
+    width: 500px;
+    height: 10px;
+    background-color: #FF4B4B;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;  /* 바가 넘치지 않도록 설정 */
   }
   
-  .post-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .post-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .post-detail {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .post-actions {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  .like-button {
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-  }
-  
-  .like-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .error-message {
-    color: #ff0000;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  .dislike-button {
-    padding: 8px 16px;
-    font-size: 14px;
-    color: #fff;
-    background-color: #dc3545; /* 빨간색 */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
-  }
-  
-  .dislike-button:hover {
-    background-color: #a71d2a; /* 더 어두운 빨간색 */
-    transform: scale(1.05); /* 살짝 확대 */
+  .like-ratio {
+    transition: width 0.3s ease;
+    border-radius: 5px 0 0 5px;  /* 왼쪽 모서리만 둥글게 */
+    top: 0;  /* 상단에 맞춤 */
+    bottom: 0;  /* 하단에 맞춤 */
   }

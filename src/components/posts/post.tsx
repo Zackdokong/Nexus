@@ -90,6 +90,22 @@ function PostPage() {
         </div>
         <div className="post-actions">
           <button className="like-button">좋아요 {post.like}</button>
+          <div className="like-dislike-bar">
+                <div
+                  className="like-ratio"
+                  style={{
+                    width: `${
+                      post.like + post.dislike === 0
+                        ? 50
+                        : (post.like / (post.like + post.dislike)) * 100
+                    }%`,
+                    height: "10px",
+                    backgroundColor: "#1da1f2",
+                    position: "absolute",
+                    left: 0,
+                  }}
+                />
+              </div>
           <button className="dislike-button">싫어요 {post.dislike}</button>
         </div>
       </div>

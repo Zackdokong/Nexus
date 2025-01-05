@@ -15,7 +15,7 @@ function App() {
         <Route path="/login" element={<LogIn />}></Route>
         <Route path="/write" element={<WritePost />}></Route>
         <Route path="/search" element={<SearchPage />}></Route>
-        <Route path="/post" element={<Post />}></Route>
+        <Route path="/post/:id" element={<Post />}></Route>
       </Routes>
     </Router>
   );
