@@ -4,6 +4,7 @@ import SignUp from './components/signup'
 import LogIn from './components/login'
 import WritePost from './components/posts/write'
 import SearchPage from './components/posts/search';
+import Post from './components/posts/post';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/login" element={<LogIn />}></Route>
         <Route path="/write" element={<WritePost />}></Route>
         <Route path="/search" element={<SearchPage />}></Route>
+        <Route path="/post" element={<Post />}></Route>
       </Routes>
     </Router>
   );
