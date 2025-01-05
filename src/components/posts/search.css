@@ -1,3 +1,10 @@
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none; /* 마우스 오버 시에도 밑줄 제거 */
+}
+
 .search-container {
     padding: 20px;
   }
@@ -8,11 +15,13 @@
   }
   
   .search-results {
+    font-size: none;
     list-style: none;
     padding: 0;
   }
   
   .search-item {
+    background-color: #1e1e1e;
     border: 1px solid #ddd;
     padding: 10px;
     margin-bottom: 10px;
@@ -20,14 +29,17 @@
   }
   
   .search-item h3 {
+    background-color: #1e1e1e;
     margin: 0 0 10px;
     font-size: 25px;
+    font-style: none;
   }
   
   .search-item p {
     margin: 0 0 10px;
     font-size: 18px;
-    color: #777;
+    color: #999;
+    background-color: #1e1e1e;
   }
   
   .post-meta {
@@ -35,6 +47,12 @@
     justify-content: space-between;
     font-size: 16px;
     color: #999;
+    background-color: black;
+  }
+
+  .post-meta span {
+    background-color: #1e1e1e;
+    text-decoration: none;
   }
   
 

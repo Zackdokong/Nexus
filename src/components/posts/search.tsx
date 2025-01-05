@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import supabase from "../../../supabase";
 import Header from "../header";
 import "./search.css";
@@ -87,16 +87,18 @@ function SearchPage() {
           <>
             <ul className="search-results">
               {posts.map((post) => (
-                <li key={post.id} className="search-item">
-                  <h3>{post.title}</h3>
-                  <p>{post.detail.substring(0, 50)}...</p>
-                  <div className="post-meta">
-                    <span>작성자: {post.writerNickname}</span>
-                    <span>좋아요: {post.like}</span>
-                    <span>조회수: {post.view}</span>
-                    <span>작성일: {new Date(post.created_at).toLocaleDateString()}</span>
-                  </div>
-                </li>
+                <Link key={post.id} to={`../post/${post.id}`}>
+                  <li key={post.id} className="search-item">
+                    <h3>{post.title}</h3>
+                    <p>{post.detail.substring(0, 50)}...</p>
+                    <div className="post-meta">
+                      <span>작성자: {post.writerNickname}</span>
+                      <span>좋아요: {post.like}</span>
+                      <span>조회수: {post.view}</span>
+                      <span>작성일: {new Date(post.created_at).toLocaleDateString()}</span>
+                    </div>
+                  </li>
+                </Link>
               ))}
             </ul>
             {/* 페이지네이션 */}
