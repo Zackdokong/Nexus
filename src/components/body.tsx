@@ -51,7 +51,11 @@ function MainBody() {
           <hr />
           <ul className="post-list">
             {latestPosts.map((post) => (
-              <li key={post.id}><p>{post.title}</p></li>
+              <Link key={post.id} to={`post/${post.id}`}>
+                <li key={post.id}>
+                  <p>{post.title}</p>
+                </li>
+              </Link>
             ))}
           </ul>
         </div>
@@ -67,7 +71,11 @@ function MainBody() {
           <hr />
           <ul className="post-list">
             {popularPosts.map((post) => (
-              <li key={post.id}><p>{post.title}</p></li>
+              <Link key={post.id} to={`post/${post.id}`}>
+                <li key={post.id}>
+                  <p>{post.title}</p>
+                </li>
+              </Link>
             ))}
           </ul>
         </div>

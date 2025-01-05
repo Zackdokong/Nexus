@@ -1,5 +1,6 @@
 a {
   text-decoration: none;
+  color: white;
 }
 a:hover {
   text-decoration: none; /* 마우스 오버 시에도 밑줄 제거 */
@@ -23,15 +24,16 @@ a:hover {
   .search-item {
     background-color: #1e1e1e;
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 20px;
     margin-bottom: 10px;
     border-radius: 5px;
+    padding-bottom: 0px;
   }
   
   .search-item h3 {
     background-color: #1e1e1e;
     margin: 0 0 10px;
-    font-size: 25px;
+    font-size: 30px;
     font-style: none;
   }
   
