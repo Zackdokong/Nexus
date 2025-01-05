@@ -53,6 +53,44 @@ function PostPage() {
     fetchPost();
   }, [id]);
 
+  // 좋아요 핸들러
+  const handleLike = async () => {
+    if (!post) return;
+
+    const { error } = await supabase
+      .from("post")
+      .update({ like: post.like + 1 }) // 좋아요 1 증가
+      .eq("id", id);
+
+    if (error) {
+      console.error("좋아요 처리 중 오류:", error.message);
+    } else {
+      setPost((prevPost: typeof post) => ({
+        ...prevPost,
+        like: prevPost.like + 1,
+      }));
+    }
+  };
+
+  // 싫어요 핸들러
+  const handleDislike = async () => {
+    if (!post) return;
+
+    const { error } = await supabase
+      .from("post")
+      .update({ dislike: post.dislike + 1 }) // 싫어요 1 증가
+      .eq("id", id);
+
+    if (error) {
+      console.error("싫어요 처리 중 오류:", error.message);
+    } else {
+      setPost((prevPost: typeof post) => ({
+        ...prevPost,
+        dislike: prevPost.dislike + 1,
+      }));
+    }
+  };
+
   if (loading) {
     return (
       <>
@@ -89,24 +127,28 @@ function PostPage() {
           <p>{post.detail}</p>
         </div>
         <div className="post-actions">
-          <button className="like-button">좋아요 {post.like}</button>
+          <button className="like-button" onClick={handleLike}>
+            좋아요 {post.like}
+          </button>
           <div className="like-dislike-bar">
-                <div
-                  className="like-ratio"
-                  style={{
-                    width: `${
-                      post.like + post.dislike === 0
-                        ? 50
-                        : (post.like / (post.like + post.dislike)) * 100
-                    }%`,
-                    height: "10px",
-                    backgroundColor: "#1da1f2",
-                    position: "absolute",
-                    left: 0,
-                  }}
-                />
-              </div>
-          <button className="dislike-button">싫어요 {post.dislike}</button>
+            <div
+              className="like-ratio"
+              style={{
+                width: `${
+                  post.like + post.dislike === 0
+                    ? 50
+                    : (post.like / (post.like + post.dislike)) * 100
+                }%`,
+                height: "10px",
+                backgroundColor: "#1da1f2",
+                position: "absolute",
+                left: 0,
+              }}
+            />
+          </div>
+          <button className="dislike-button" onClick={handleDislike}>
+            싫어요 {post.dislike}
+          </button>
         </div>
       </div>
     </>
