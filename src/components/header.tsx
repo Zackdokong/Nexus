@@ -23,6 +23,7 @@ function Header() {
 
     const { data: authListener } = supabase.auth.onAuthStateChange(
       (event, session) => {
+        console.log(event);
         setUser(session?.user || null);
       }
     );
