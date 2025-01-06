@@ -19,7 +19,7 @@ function WritePost() {
         setWriter(session.user.id); // 사용자 UUID 저장
       } else {
         setWriter(null);
-        navigate("/login"); // 로그인되지 않으면 로그인 페이지로 리디렉션
+        navigate("../login"); // 로그인되지 않으면 로그인 페이지로 리디렉션
       }
     };
 

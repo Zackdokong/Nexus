@@ -69,7 +69,7 @@ function LogIn() {
           </button>
         </form>
         <p className="signup-link">
-          계정이 없으신가요? <a href="/signup">회원가입</a>
+          계정이 없으신가요? <a href="../signup">회원가입</a>
         </p>
       </div>
     </>
