@@ -1,7 +1,7 @@
 import "./login.css";
 import Header from "./header";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom"; // React Router의 useNavigate 훅
+import { Link, useNavigate } from "react-router-dom"; // React Router의 useNavigate 훅
 import supabase from "../../supabase";
 
 function LogIn() {
@@ -69,7 +69,7 @@ function LogIn() {
           </button>
         </form>
         <p className="signup-link">
-          계정이 없으신가요? <a href="../signup">회원가입</a>
+          계정이 없으신가요? <Link to="../signup"><a>회원가입</a></Link>
         </p>
       </div>
     </>
