@@ -25,6 +25,10 @@ span {
     background-color: #1e1e1e;
 }
 
+h1 {
+  background-color: #1e1e1e;
+}
+
 .post-meta {
   display: flex;
   justify-content: start;
@@ -109,4 +113,113 @@ span {
     border-radius: 5px 0 0 5px;  /* 왼쪽 모서리만 둥글게 */
     top: 0;  /* 상단에 맞춤 */
     bottom: 0;  /* 하단에 맞춤 */
+  }
+
+  .comment-wrapper {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 500px;
+    overflow: auto;
+  }
+  
+  .comment-wrapper h2 {
+    margin-left: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding-top: 0;
+    margin-top: 0;
+    background-color: #1e1e1e;
+  }
+  
+  .comment {
+    background-color: #1e1e1e;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    width: 95%;
+    align-self: center;
+    margin-left: 7px;
+    margin-top: 30px;
+  }
+  
+  .comment:last-child {
+    border-bottom: none;
+  }
+  
+  .comment p {
+    margin-top: 0;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 5px;
+  }
+  
+  .comment span {
+    font-size: 15px;
+    color: #888;
+  }
+  
+  .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  
+  .comment-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  }
+  
+  .comment-input textarea {
+    align-self: center;
+    width: 95%;
+    min-height: 80px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: none;
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  .comment-input textarea:focus {
+    outline: none;
+    border-color: #1da1f2;
+    box-shadow: 0 0 4px rgba(29, 161, 242, 0.5);
+  }
+  
+  .comment-input {
+    background-color: #1e1e1e;
+  }
+
+  .comment-input button {
+    background-color: #1e1e1e;
+    margin-top: 10px;
+    align-self: flex-end;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #1e1e1e;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 9px;
+    margin-top: 30px;
+  }
+  
+  .comment-input button:hover {
+    background-color: #888;
+  }
+  
+  .comment-input button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
   }
